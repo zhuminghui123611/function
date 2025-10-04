@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/index.js": {
+      "memory": 128
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/v1/(.*)",
+      "destination": "/api/index"
+    }
+  ]
+}
