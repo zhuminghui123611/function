@@ -31,7 +31,10 @@ const API_CONFIG = {
  * Main handler for the Edge Function.
  */
 module.exports = async (req, res) => {
-    const { path, query, body } = req;
+    const url = new URL(req.url);
+    const path = url.pathname;
+    const query = Object.fromEntries(url.searchParams.entries());
+    const { body } = req;
 
     try {
         if (path.startsWith('/api/v1/market/overview')) {
